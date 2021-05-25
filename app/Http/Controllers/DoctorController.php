@@ -46,11 +46,11 @@ class DoctorController extends Controller
     {
         //
         $request->validate([
-            'nombre_completo' => 'required',
+            'nombre_completo' => 'required|alpha',
             'direccion' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|digits:10',
             'tipo_sangre' => 'required',
-            'años_experiencia' => 'required',
+            'años_experiencia' => 'required|gte:0',
             'fecha_nacimiento' => 'required',
             'hospital' => 'required'
         ]);
@@ -108,9 +108,9 @@ class DoctorController extends Controller
         $request->validate([
             'nombre_completo' => 'required',
             'direccion' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|digits:10',
             'tipo_sangre' => 'required',
-            'años_experiencia' => 'required',
+            'años_experiencia' => 'required|gte:0',
             'fecha_nacimiento' => 'required',
             'hospital' => 'required'
         ]);

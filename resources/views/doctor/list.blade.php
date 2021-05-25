@@ -73,8 +73,8 @@
                         </script>
                      @endif
                   </div>
-                  <div class="overflow">
-                     <table class="table bordered" id="tbl" width="100%">
+                  <div>
+                     <table class="table display bordered display" style="width: 100%" id="tbl" width="100%">
                         <thead>
                            <tr>
                               <th><abbr title="Nombre completo del doctor">Nombre Completo</abbr></th>
@@ -99,9 +99,9 @@
                                  <td>{{$actual->años_experiencia}}</td>
                                  <td>{{$actual->fecha_nacimiento}}</td>
                                  <td>{{$actual->nombre_hospital}}</td>
-                                 <td class="row u-justify-space-around">
-                                    <form action="{{route("doctor.edit",$actual->id)}}"><button class="btn-link">Editar</button></form>
-                                    <form action="{{route("doctor.destroy",$actual->id)}}" method="POST">@csrf @method("delete")<button class="btn-link">Borrar</button></form>
+                                 <td>
+                                       <form action="{{route("doctor.edit",$actual->id)}}"><button class="btn-link">Editar</button></form>
+                                       <form action="{{route("doctor.destroy",$actual->id)}}" method="POST">@csrf @method("delete")<button class="btn-link">Borrar</button></form>                              
                                  </td>
                               </tr>
                            @endforeach
@@ -135,7 +135,7 @@
              dropDownMenu.classList.toggle('active');
          });
      });
-     $("#tbl").DataTable({
+     table = $("#tbl").DataTable({
 			"lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
 			"paging": true,
 			"pageLength":50,

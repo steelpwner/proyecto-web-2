@@ -51,7 +51,7 @@ class HospitalController extends Controller
         $request->validate([
             'nombre' => 'required',
             'direccion' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required|digits:10'
         ]);
 
         $hospital = new Hospital([
@@ -102,7 +102,7 @@ class HospitalController extends Controller
         $request->validate([
             'nombre' => 'required',
             'direccion' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required|digits:10'
         ]);
         $hospital = Hospital::find($id);
         $hospital->nombre = $request->get("nombre");

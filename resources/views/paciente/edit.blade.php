@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear paciente</title>
+    <title>Editar paciente</title>
     <link rel="stylesheet" href="{{asset("./Cirrus-0.6.1/dist/cirrus.css")}}">
     <link rel="stylesheet" href="{{asset("./Cirrus-0.6.1/dist/cirrus-core.css")}}">
 </head>
@@ -46,32 +46,32 @@
                             @method("PATCH")
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Nombre:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre" value="{{$paciente->nombre}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre" class=" @error('nombre') input-error @enderror" value="{{$paciente->nombre}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Dirección:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" value="{{$paciente->direccion}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" class=" @error('direccion') input-error @enderror" value="{{$paciente->direccion}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Teléfono:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" value="{{$paciente->telefono}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" class=" @error('telefono') input-error @enderror" value="{{$paciente->telefono}}" required></div>
                             </div>
 
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Persona de contacto:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="persona_contacto" value="{{$paciente->persona_contacto}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="persona_contacto"  class=" @error('persona_contacto') input-error @enderror" value="{{$paciente->persona_contacto}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">EPS:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="eps" value="{{$paciente->eps}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="eps" value="{{$paciente->eps}}" class=" @error('eps') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Hospital:</span></div>
                                 <div class="col-9 ignore-screen level-item">
-                                    <select name="hospital" required>
+                                    <select name="hospital" class=" @error('hospital') input-error @enderror" required>
                                         <option value="" disabled>Seleccione un hospital</option>
                                         @foreach ($hospitales as $actual)
-                                            <option value="{{$actual->id}}" @if ($doctor->hospital == $actual->nombre) selected @endif>{{$actual->nombre}}</option>
+                                            <option value="{{$actual->id}}" @if ($paciente->hospital == $actual->nombre) selected @endif>{{$actual->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -73,6 +73,22 @@
                         </script>
                      @endif
                   </div>
+
+                  @foreach ($pacientes as $actual)
+                     <div class="modal modal-animated--zoom-in" id="delete-modal-{{$actual->id}}">
+                        <a href="#" class="modal-overlay close-btn" aria-label="Close"></a>
+                        <div class="modal-content">
+                           <div class="modal-body u-text-center">
+                              <p>Al eliminar este paciente se eliminarán todas las incidencias
+                                 Relacionadas a este ¿Está seguro?</p>
+                                    <form action="{{route("paciente.destroy",$actual->id)}}" method="POST">@csrf @method("delete")<button class="btn-link">Sí</button></form>
+                                    <a href="#" aria-label="Close">
+                                       <button class="btn btn-link">No</button>
+                                    </a>
+                                 </div>
+                        </div>
+                     </div>
+                     @endforeach
                   <div class="overflow">
                      <table class="table bordered" id="tbl" width="100%">
                         <thead>
@@ -80,7 +96,7 @@
                               <th><abbr title="Nombre completo del paciente">Nombre</abbr></th>
                               <th><abbr title="Dirección del paciente">Dirección</abbr></th>
                               <th><abbr title="Teléfono del paciente">Teléfono</abbr></th>
-                              <th><abbr title="Tipo de sangre del paciente">Persona de contacto</abbr></th>
+                              <th><abbr title="Persona de contacto del paciente">Persona de contacto</abbr></th>
                               <th><abbr title="Eps del paciente">EPS</abbr></th>
                               <th><abbr title="Hospital">Hospital</abbr></th>
                               <th><abbr title="Acciones paciente">Acciones</abbr></th> 
@@ -97,9 +113,9 @@
                                  <td>{{$actual->persona_contacto}}</td>
                                  <td>{{$actual->eps}}</td>
                                  <td>{{$actual->nombre_hospital}}</td>
-                                 <td class="row u-justify-space-around">
+                                 <td>
                                     <form action="{{route("paciente.edit",$actual->id)}}"><button class="btn-link">Editar</button></form>
-                                    <form action="{{route("paciente.destroy",$actual->id)}}" method="POST">@csrf @method("delete")<button class="btn-link">Borrar</button></form>
+                                    <a href="#delete-modal-{{$actual->id}}"><button class="btn btn-link">Borrar</button></a>
                                  </td>
                               </tr>
                            @endforeach

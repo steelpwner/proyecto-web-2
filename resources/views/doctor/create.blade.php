@@ -45,20 +45,20 @@
                             @csrf
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Nombre Completo:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre_completo" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre_completo" class=" @error('nombre_completo') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Dirección:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" class=" @error('direccion') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Teléfono:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" class=" @error('telefono') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Tipo sangre:</span></div>
                                 <div class="col-9 ignore-screen level-item">
-                                    <select name="tipo_sangre" required>
+                                    <select name="tipo_sangre" class=" @error('tipo_sangre') input-error @enderror" required>
                                         <option value="" disabled selected>Seleccione un tipo de sangre</option>
                                         <option value="O-">O-</option>
                                         <option value="O+">O+</option>
@@ -73,16 +73,16 @@
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Años experiencia:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="number" name="años_experiencia" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="number"  name="años_experiencia" class=" @error('años_experiencia') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Fecha nacimiento:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="date" name="fecha_nacimiento" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="date" name="fecha_nacimiento" class=" @error('fecha_nacimiento') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Hospital:</span></div>
                                 <div class="col-9 ignore-screen level-item">
-                                    <select name="hospital" required>
+                                    <select name="hospital" class=" @error('hospital') input-error @enderror" required>
                                         <option value="" disabled selected>Seleccione un hospital</option>
                                         @foreach ($hospitales as $actual)
                                             <option value="{{$actual->id}}">{{$actual->nombre}}</option>

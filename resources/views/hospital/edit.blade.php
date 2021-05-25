@@ -44,15 +44,15 @@
                         @method("PUT")
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Nombre:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="nombre" value="{{$hospital->nombre}}" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" class=" @error('nombre') input-error @enderror" name="nombre" value="{{$hospital->nombre}}" required></div>
                         </div>
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Dirección:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" value="{{$hospital->direccion}}" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" class=" @error('direccion') input-error @enderror" value="{{$hospital->direccion}}" required></div>
                         </div>
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Teléfono:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" value="{{$hospital->telefono}}" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" class=" @error('telefono') input-error @enderror" value="{{$hospital->telefono}}" required></div>
                         </div>
                         
 

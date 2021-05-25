@@ -43,15 +43,15 @@
                         @csrf
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Nombre:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="nombre" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" name="nombre" class=" @error('nombre') input-error @enderror" required></div>
                         </div>
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Dirección:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" class=" @error('direccion') input-error @enderror" required></div>
                         </div>
                         <div class="row ignore-screen level">
                             <div class="col-3 ignore-screen level-item"><p class="m-0">Teléfono:</span></div>
-                            <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" required></div>
+                            <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" class=" @error('telefono') input-error @enderror" required></div>
                         </div>
 
                         <div class="u-text-right">

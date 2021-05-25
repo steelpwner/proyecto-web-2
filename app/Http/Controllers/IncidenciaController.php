@@ -51,7 +51,7 @@ class IncidenciaController extends Controller
         $request->validate([
             "paciente" => "required",
             "nombre_a" => "required",
-            "telefono_a" => "required",
+            "telefono_a" => "required|digits:10",
             "antecedentes" => "required",
             "Tos" => "required",
             "Dificultad+para+respirar" => "required",
@@ -151,7 +151,7 @@ class IncidenciaController extends Controller
         $request->validate([
             "paciente" => "required",
             "nombre_a" => "required",
-            "telefono_a" => "required",
+            "telefono_a" => "required|digits:10",
             "antecedentes" => "required",
             "Tos" => "required",
             "Dificultad+para+respirar" => "required",

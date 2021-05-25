@@ -109,7 +109,7 @@
                                  <td>
                                     {{$actual->diagnostico_doctor}}
                                  </td>
-                                 <td class="row u-justify-space-around">
+                                 <td>
                                     <form action="{{route("incidencia.edit",$actual->id)}}"><button class="btn-link">Editar</button></form>
                                     <form action="{{route("incidencia.destroy",$actual->id)}}" method="POST">@csrf @method("delete")<button class="btn-link">Borrar</button></form>
                                  </td>

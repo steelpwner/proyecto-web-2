@@ -46,20 +46,20 @@
                             @method("PUT")
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Nombre Completo:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre_completo" value="{{$doctor->nombre_completo}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="nombre_completo" class=" @error('nombre_completo') input-error @enderror" value="{{$doctor->nombre_completo}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Dirección:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" value="{{$doctor->direccion}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="direccion" value="{{$doctor->direccion}}" class=" @error('direccion') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Teléfono:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" value="{{$doctor->telefono}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="text" name="telefono" value="{{$doctor->telefono}}" class=" @error('telefono') input-error @enderror" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Tipo sangre:</span></div>
                                 <div class="col-9 ignore-screen level-item">
-                                    <select name="tipo_sangre" required>
+                                    <select name="tipo_sangre" class=" @error('tipo_sangre') input-error @enderror" required>
                                         <option value="" disabled>Seleccione un tipo de sangre</option>
                                         <option value="O-" @if ($doctor->tipo_sangre == "O-") selected @endif >O-</option>
                                         <option value="O+" @if ($doctor->tipo_sangre == "O+") selected @endif>O+</option>
@@ -74,16 +74,16 @@
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Años experiencia:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="number" name="años_experiencia" value="{{$doctor->años_experiencia}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="number" name="años_experiencia" class=" @error('años_experiencia') input-error @enderror" value="{{$doctor->años_experiencia}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Fecha nacimiento:</span></div>
-                                <div class="col-9 ignore-screen level-item"><input type="date" name="fecha_nacimiento" value="{{$doctor->fecha_nacimiento}}" required></div>
+                                <div class="col-9 ignore-screen level-item"><input type="date" name="fecha_nacimiento" class=" @error('fecha_nacimiento') input-error @enderror" value="{{$doctor->fecha_nacimiento}}" required></div>
                             </div>
                             <div class="row ignore-screen level">
                                 <div class="col-3 ignore-screen level-item"><p class="m-0">Hospital:</span></div>
                                 <div class="col-9 ignore-screen level-item">
-                                    <select name="hospital" required>
+                                    <select name="hospital"  class=" @error('hospital') input-error @enderror" required>
                                         <option value="" disabled>Seleccione un hospital</option>
                                         @foreach ($hospitales as $actual)
                                             <option value="{{$actual->id}}" @if ($doctor->hospital == $actual->nombre) selected @endif>{{$actual->nombre}}</option>

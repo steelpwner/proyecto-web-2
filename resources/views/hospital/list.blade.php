@@ -108,7 +108,7 @@
                               <th>{{$actual->nombre}}</th>
                               <td>{{$actual->direccion}}</td>
                               <td>{{$actual->telefono}}</td>
-                              <td class="row u-justify-space-around">
+                              <td>
                                  <form action="{{route("hospital.edit",$actual->id)}}"><button class="btn-link">Editar</button></form>
                                  <a href="#delete-modal-{{$actual->id}}"><button class="btn btn-link">Borrar</button></a>
                               </td>

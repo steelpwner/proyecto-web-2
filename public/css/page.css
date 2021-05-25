@@ -5,6 +5,10 @@
 
 
 .dataTables_scrollBody table {
-    margin-left:0px;
+    margin:0px !important;
 }
 
+
+.overflow {
+    overflow:auto;
+}

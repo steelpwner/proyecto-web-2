@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Paciente;
 use App\Hospital;
+use App\Incidencia;
 use Illuminate\Support\Facades\DB;
 
 class PacienteController extends Controller
@@ -47,7 +48,7 @@ class PacienteController extends Controller
         $request->validate([
             'nombre' => 'required',
             'direccion' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|size:10',
             'eps' => 'required',
             'persona_contacto' => 'required',
             "hospital" => "required"
@@ -105,7 +106,7 @@ class PacienteController extends Controller
         $request->validate([
             'nombre' => 'required',
             'direccion' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|size:10',
             'eps' => 'required',
             'persona_contacto' => 'required',
             "hospital" => "required"
@@ -133,6 +134,10 @@ class PacienteController extends Controller
     {
         //
         $paciente = Paciente::find($id);
+        $incidencias = Incidencia::where("paciente",$paciente);
+        foreach ($incidencias as $incidencia) {
+            $incidencia->delete();
+        }
         $paciente->delete();
         return redirect(route("paciente.index"))->with("success","¡Paciente eliminado correctamente!");
     }
