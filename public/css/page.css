@@ -1,0 +1,10 @@
+.hidden,.hidden div,.hidden textarea {
+    transition: ease-out 0.5s;
+    display: none !important;
+}
+
+
+.dataTables_scrollBody table {
+    margin-left:0px;
+}
+
