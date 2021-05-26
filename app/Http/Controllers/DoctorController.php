@@ -46,7 +46,7 @@ class DoctorController extends Controller
     {
         //
         $request->validate([
-            'nombre_completo' => 'required|alpha',
+            'nombre_completo' => 'required',
             'direccion' => 'required',
             'telefono' => 'required|digits:10',
             'tipo_sangre' => 'required',

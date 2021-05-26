@@ -130,7 +130,7 @@ class HospitalController extends Controller
         $pacientes = Paciente::where("hospital","=",$id)->get();
         foreach ($pacientes as $paciente) {
             $id_p = $paciente->id;
-            $incidencias = Incidencia::where("paciente","=",$id_p);
+            $incidencias = Incidencia::where("paciente","=",$id_p)->get();
             foreach ($incidencias as $incidencia) {
                 $incidencia->delete();
             }

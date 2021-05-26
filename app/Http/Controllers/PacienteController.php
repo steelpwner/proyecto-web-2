@@ -134,7 +134,7 @@ class PacienteController extends Controller
     {
         //
         $paciente = Paciente::find($id);
-        $incidencias = Incidencia::where("paciente",$paciente);
+        $incidencias = Incidencia::where("paciente","=",$id)->get();
         foreach ($incidencias as $incidencia) {
             $incidencia->delete();
         }
